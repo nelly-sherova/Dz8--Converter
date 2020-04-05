@@ -4,18 +4,18 @@ namespace Converter
 {
     class Converter
         {
-            public double usd=0.098;
-            public double eur=0.091;
-            public double rub=7.33;
+            public double usd;
+            public double eur;
+            public double rub;
             public string val, value;
             public double n;
             public Converter(){}
             public Converter(double usd, double eur, double rub)
             {
 
-                usd=this.usd;
-                eur=this.eur;
-                rub=this.rub;
+                this.usd=usd;
+                this.eur=eur;
+                this.rub=rub;
             }
              public double SomUsd()
             {
@@ -91,7 +91,7 @@ namespace Converter
         {
             Console.Write("Введите вашу сумму: ");
             double n = Convert.ToDouble(Console.ReadLine());
-            Converter money = new Converter();
+            Converter money = new Converter(0.098,0.091,7.33);
             Console.Write("Укажите наименование вашей купюры\n(доллар usd, евро eur, рубль rub, сомони som): ");
             string value = Console.ReadLine();
             money.ExchangeRate();
