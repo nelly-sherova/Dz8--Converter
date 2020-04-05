@@ -4,9 +4,9 @@ namespace Converter
 {
     class Converter
         {
-            public double usd;
-            public double eur;
-            public double rub;
+            private double usd;
+            private double eur;
+            private double rub;
             public string val, value;
             public double n;
             public Converter(){}
@@ -19,27 +19,27 @@ namespace Converter
             }
              public double SomUsd()
             {
-                return n*usd;
+                return Math.Round(n*usd,3);
             }
             public double SomEur()
             {
-                return n*eur;
+                return Math.Round(n*eur,3);
             }
             public double SomRub()
             {
-                return n*rub;
+                return Math.Round(n*rub,3);
             }
             public double UsdSom()
             {
-                return n/usd;
+                return Math.Round(n/usd,3);
             }
             public double EurSom()
             {
-                return n/eur;
+                return Math.Round(n/eur,3);
             }
             public double RubSom()
             {
-                return n/rub;
+                return Math.Round(n/rub,3);
             }
             public void ExchangeRate()
             {
