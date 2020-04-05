@@ -80,7 +80,7 @@ namespace Converter
                         break;
                     }
                 }
-                else Console.WriteLine("Вы ввели некорректный текст для обозначения вашей валюты!!!");
+                if(value!="som" && value!="rub" && value!="usd" && value!="eur") Console.WriteLine("Вы ввели некорректный текст для обозначения вашей валюты!!!");
                   
             }
 
@@ -89,7 +89,23 @@ namespace Converter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Write("Введите вашу сумму: ");
+            double n = Convert.ToDouble(Console.ReadLine());
+            Converter money = new Converter();
+            Console.Write("Укажите наименование вашей купюры\n(доллар usd, евро eur, рубль rub, сомони som): ");
+            string value = Console.ReadLine();
+            money.ExchangeRate();
+            if (value == "som")
+            {
+                Console.Write("Выберете в какую валюту хотите конвертировать свой сомони:\n(для доллара usd, для евро eur, для рубля rub): ");
+                string val = Console.ReadLine();
+                money.val = val;
+            }
+            money.value = value;
+            money.n = n;
+            
+            money.GetInfo();
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
